@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chaosharness"
+version = "0.1.0"
+description = "Automated LLM evaluation and runtime chaos testing framework"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["requests", "rich", "pillow", "pyyaml", "psutil"]
+
+[project.scripts]
+chaosharness = "chaosharness.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["chaosharness*"]
+exclude = ["out*", "demo_cache*", "scenario_packs*", "tests*"]
+
+[tool.pytest.ini_options]
+markers = [
+    "live_ollama: marks tests requiring local Ollama with gemma4:e2b installed (deselect with '-m \"not live_ollama\"')"
+]
+
+

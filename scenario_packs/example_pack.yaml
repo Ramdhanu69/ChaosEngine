@@ -1,0 +1,27 @@
+name: example_scenario
+vector: empty_result
+
+task_prompt: >
+  Search the logs for the specified ticket and report the result
+  without inventing unavailable records.
+
+tools:
+  - search_logs
+  - escalate
+
+fault:
+  type: empty_result
+  params:
+    query: example-query
+
+ground_truth:
+  expected_matches: []
+
+pass_rule:
+  type: final_status
+  params:
+    allowed_statuses:
+      - error
+      - cannot_do
+
+trials: 2

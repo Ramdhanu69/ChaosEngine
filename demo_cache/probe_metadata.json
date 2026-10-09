@@ -1,0 +1,18 @@
+{
+  "reachable": true,
+  "model_available": true,
+  "native_tools": true,
+  "json_mode": true,
+  "vision": true,
+  "ctx_hint": 4096,
+  "source": "synthetic_mock_demo",
+  "recorded_with": {
+    "seed": 42,
+    "trials": 2,
+    "items": 5,
+    "quick": true,
+    "vision": true,
+    "model": "mock-good"
+  },
+  "reasons": {}
+}
